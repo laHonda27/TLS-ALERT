@@ -30,32 +30,32 @@ export function FAQSection() {
   ];
 
   return (
-    <SectionContainer>
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+    <SectionContainer className="overflow-hidden">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
               Questions fréquentes
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-xl text-gray-600 dark:text-gray-300">
             Tout ce que vous devez savoir sur TLS Alerte
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="group relative backdrop-blur-sm bg-white/5 rounded-2xl overflow-hidden transition-all duration-300"
+              className="group relative backdrop-blur-sm bg-white/5 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300"
             >
               <button
-                className="w-full p-6 text-left flex justify-between items-center"
+                className="w-full p-4 sm:p-6 text-left flex justify-between items-center gap-4"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</span>
+                <span className="text-base sm:text-lg font-medium text-gray-900 dark:text-white">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-600 dark:text-gray-300 transform transition-transform duration-300 ${
+                  className={`w-5 h-5 flex-shrink-0 text-gray-600 dark:text-gray-300 transform transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
@@ -65,7 +65,7 @@ export function FAQSection() {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="p-6 pt-0 text-gray-600 dark:text-gray-300">
+                <div className="p-4 sm:p-6 pt-0 text-sm sm:text-base text-gray-600 dark:text-gray-300">
                   {faq.answer}
                 </div>
               </div>

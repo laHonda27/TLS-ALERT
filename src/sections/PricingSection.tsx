@@ -57,22 +57,22 @@ export function PricingSection() {
 
   return (
     <Section className="py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#8257FF] mb-4">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#8257FF] mb-4">
             Nos forfaits
           </h2>
           <div className="space-y-2">
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
               Choisissez l'offre qui correspond à vos besoins.
             </p>
-            <p className="text-lg text-[#8257FF] dark:text-[#8257FF] font-medium">
-              Une fois votre demande administrative terminée, vous pouvez arrêter votre abonnement à tout moment. <br/>Sans engagement.
+            <p className="text-base sm:text-lg text-[#8257FF] dark:text-[#8257FF] font-medium">
+              Une fois votre demande administrative terminée, vous pouvez arrêter votre abonnement à tout moment. <br className="hidden sm:block"/>Sans engagement.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}

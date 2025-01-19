@@ -11,10 +11,10 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label }) => (
-  <div className="card flex items-center space-x-2 p-3">
-    <Icon className="w-5 h-5 text-primary-500" />
+  <div className="card flex items-center space-x-2 p-2 sm:p-3">
+    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-500" />
     <div>
-      <div className="text-primary font-bold">{value}</div>
+      <div className="text-sm sm:text-base text-primary font-bold">{value}</div>
       <div className="text-xs text-muted">{label}</div>
     </div>
   </div>
@@ -22,8 +22,8 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, value, label }) => (
 
 export function HeroSection() {
   return (
-    <Section className='relative py-2 sm:py-4'>
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+    <Section className='relative mt-3 py-5 sm:py-4 overflow-hidden'>
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,17 +36,17 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100/50 dark:bg-primary-900/20 backdrop-blur-sm"
+              className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-primary-100 dark:bg-indigo-500/20 backdrop-blur-sm border border-primary-200 dark:border-indigo-500/30"
             >
-              <Bell className="w-5 h-5 text-primary-600 dark:text-primary-400 mr-2" />
-              <span className="text-sm font-medium text-primary-700 dark:text-primary-400">
+              <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600 dark:text-indigo-300 mr-2" />
+              <span className="text-xs sm:text-sm font-medium text-primary-700 dark:text-indigo-200">
                 Ne manquez plus jamais un rendez-vous
               </span>
             </motion.div>
 
             {/* Main content */}
-            <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl title-primary leading-tight">
+            <div className="space-y-4 sm:space-y-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl title-primary leading-tight">
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                   Obtenez votre rendez-vous
                 </span>{' '}
@@ -55,39 +55,41 @@ export function HeroSection() {
                 </span>
               </h1>
 
-              <p className="text-xl text-secondary max-w-xl">
+              <p className="text-base sm:text-xl text-secondary max-w-xl">
                 Notre système de notification intelligent vous alerte instantanément dès qu'un créneau se libère. Simplifiez votre processus de réservation.
               </p>
 
               {/* Stats grid */}
-              <div className="grid grid-cols-3 gap-4 my-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 my-6 sm:my-8">
                 <StatCard icon={Users} value="10,000+" label="Utilisateurs actifs" />
                 <StatCard icon={Clock} value="24/7" label="Surveillance active" />
                 <StatCard icon={Shield} value="100%" label="Sécurisé" />
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
                   <Link
                     to="/auth"
-                    className="btn-primary"
+                    className="btn-primary w-full sm:w-auto whitespace-nowrap px-4 sm:px-6"
                   >
-                    Commencer maintenant
-                    <ArrowRight className="ml-2 -mr-1 w-5 h-5" />
+                    <span>Commencer maintenant</span>
+                    <ArrowRight className="ml-2 -mr-1 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   </Link>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto"
                 >
                   <Link
                     to="/how-it-works"
-                    className="btn-secondary"
+                    className="btn-secondary w-full sm:w-auto whitespace-nowrap px-4 sm:px-6"
                   >
                     Comment ça marche ?
                   </Link>

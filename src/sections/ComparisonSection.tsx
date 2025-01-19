@@ -12,22 +12,22 @@ interface ComparisonItem {
 }
 
 const CTAButtons = ({ className = "" }: { className?: string }) => (
-  <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 ${className}`}>
+  <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 w-full ${className}`}>
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 dark:from-indigo-500 dark:to-purple-500 dark:hover:from-indigo-600 dark:hover:to-purple-600 text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+      className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 dark:from-indigo-500 dark:to-purple-500 dark:hover:from-indigo-600 dark:hover:to-purple-600 text-white px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
     >
-      Essayez notre service
-      <ArrowRight className="w-5 h-5" />
+      <span className="whitespace-nowrap">Essayez notre service</span>
+      <ArrowRight className="w-5 h-5 flex-shrink-0" />
     </motion.button>
     <Link to="/features" className="w-full sm:w-auto">
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="w-full bg-white/10 dark:bg-indigo-500/20 hover:bg-white/20 dark:hover:bg-indigo-500/30 text-indigo-600 dark:text-white px-8 py-3 rounded-xl font-semibold transition-all border border-indigo-200 dark:border-white/20 hover:border-indigo-300 dark:hover:border-white/40"
+        className="w-full bg-white/10 dark:bg-indigo-500/20 hover:bg-white/20 dark:hover:bg-indigo-500/30 text-indigo-600 dark:text-white px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all border border-indigo-200 dark:border-white/20 hover:border-indigo-300 dark:hover:border-white/40"
       >
-        Découvrir nos fonctionnalités
+        <span className="whitespace-nowrap">Découvrir nos fonctionnalités</span>
       </motion.button>
     </Link>
   </div>
@@ -95,15 +95,15 @@ export function ComparisonSection() {
   };
 
   return (
-    <SectionContainer className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-600 dark:from-indigo-500 dark:via-purple-500 dark:to-indigo-500">
-      <div className="container mx-auto px-4">
+    <SectionContainer className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-600 dark:from-indigo-500 dark:via-purple-500 dark:to-indigo-500 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white px-2">
             Pourquoi choisir notre service ?
           </h2>
       
@@ -116,13 +116,13 @@ export function ComparisonSection() {
           transition={{ duration: 0.5 }}
           className="relative mb-16"
         >
-          <div className="relative bg-white/95 dark:bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 p-8">
+          <div className="relative bg-white/95 dark:bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 p-4 sm:p-8">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 dark:from-white/10 dark:to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl mb-4">
+            <div className="relative text-center w-full max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Faites le choix d'un service rapide, transparent, et abordable.
               </h2>
-              <p className="mt-4 text-xl text-gray-600 dark:text-white/90 mb-8">
+              <p className="mt-4 text-base sm:text-xl text-gray-600 dark:text-white/90 mb-8">
                 Oubliez les complications avec les agences.
               </p>
               <CTAButtons />
@@ -132,13 +132,13 @@ export function ComparisonSection() {
           <div className="absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform translate-y-8" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 relative">
           {/* Notre Service */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative group bg-white/95 dark:bg-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
+            className="relative group bg-white/95 dark:bg-white/10 p-4 sm:p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 dark:from-white/10 dark:to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
@@ -178,7 +178,7 @@ export function ComparisonSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative group bg-white/95 dark:bg-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
+            className="relative group bg-white/95 dark:bg-white/10 p-4 sm:p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/5 dark:from-white/10 dark:to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">

@@ -16,7 +16,7 @@ export function SectionContainer({
     <section 
       className={`
         relative
-        ${noPadding ? '' : 'py-24'}
+        ${noPadding ? '' : 'py-12'}
         transition-all duration-700
         ${className}
       `}

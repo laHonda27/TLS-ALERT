@@ -1,6 +1,5 @@
 import React from 'react';
 import { Bell, Zap, Calendar } from 'lucide-react';
-import { Section } from '../components/Section';
 
 interface Step {
   icon: React.ElementType;
@@ -22,13 +21,13 @@ export function HowItWorksSection() {
     },
     {
       icon: Calendar,
-      title: "Réservez votre créneau",
-      description: "Cliquez sur le lien dans la notification pour réserver immédiatement votre rendez-vous."
+      title: "Réservez votre rendez-vous",
+      description: "Cliquez sur le lien dans la notification pour accéder directement au créneau disponible."
     }
   ];
 
   return (
-    <Section>
+    <section id="how-it-works" className="relative py-16 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
@@ -62,6 +61,6 @@ export function HowItWorksSection() {
           })}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

@@ -63,11 +63,14 @@ export function PricingSection() {
             Nos forfaits
           </h2>
           <div className="space-y-2">
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
               Choisissez l'offre qui correspond à vos besoins.
             </p>
-            <p className="text-base sm:text-lg text-[#8257FF] dark:text-[#8257FF] font-medium">
-              Une fois votre demande administrative terminée, vous pouvez arrêter votre abonnement à tout moment. <br className="hidden sm:block"/>Sans engagement.
+            <p className="text-lg font-bold text-gray-800 dark:text-white">
+              Une fois votre demande administrative terminée, vous pouvez arrêter votre abonnement à tout moment. <br className="hidden sm:block"/>
+            </p>
+            <p className="font-bold text-xl text-[#8257FF] dark:text-[#8257FF]">
+              Sans engagement.
             </p>
           </div>
         </div>

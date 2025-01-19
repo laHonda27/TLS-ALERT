@@ -36,7 +36,16 @@ export default function Navbar() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16">
           <div className="flex items-center flex-shrink-0">
-            <Link to="/" className="flex items-center space-x-1.5 sm:space-x-2">
+            <Link 
+              to="/" 
+              className="flex items-center space-x-1.5 sm:space-x-2"
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+            >
               <Calendar className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
               <span className="font-bold text-lg sm:text-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent whitespace-nowrap">
                 TLS Alerte

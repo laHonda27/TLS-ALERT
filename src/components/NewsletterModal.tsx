@@ -100,55 +100,80 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Nom
+                      Nom (optionnel)
                     </label>
                     <input
                       type="text"
                       id="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-300"
+                      className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent outline-none transition-shadow"
                       placeholder="Votre nom"
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       id="email"
+                      required
                       value={email}
                       onChange={(e) => {
                         setEmail(e.target.value);
                         setEmailError('');
                       }}
-                      className={`w-full px-3 py-2 text-sm border rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-300 ${
-                        emailError ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                      className={`w-full px-3 sm:px-4 py-2 text-sm sm:text-base border rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent outline-none transition-shadow ${
+                        emailError 
+                          ? 'border-red-500 dark:border-red-500' 
+                          : 'border-gray-300 dark:border-gray-600'
                       }`}
                       placeholder="votre@email.com"
                     />
                     {emailError && (
-                      <p className="mt-1 text-xs text-red-500">{emailError}</p>
+                      <p className="mt-1 text-xs sm:text-sm text-red-500">{emailError}</p>
                     )}
                   </div>
-                  <button
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full px-4 py-2 text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 rounded-lg transition-colors duration-200"
+                    className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                   >
                     S'inscrire à la newsletter
-                  </button>
+                  </motion.button>
                 </form>
               </>
             ) : (
-              <div className="text-center py-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                  Merci de votre inscription !
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center py-6 sm:py-8"
+              >
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-6 h-6 sm:w-8 sm:h-8 text-green-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  Merci de vous être abonné(e) !
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                  Vous recevrez bientôt nos dernières actualités.
+                  Nous vous tiendrons informé(e) des dernières nouveautés.
                 </p>
-              </div>
+              </motion.div>
             )}
           </motion.div>
         </motion.div>

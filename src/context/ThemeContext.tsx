@@ -21,8 +21,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || savedTheme === 'light') {
           setTheme(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          setTheme('dark');
+        } else {
+          setTheme('light'); // On force le thème clair par défaut
+          localStorage.setItem('theme', 'light'); // On sauvegarde le choix
         }
         setIsLoading(false);
       };
@@ -33,7 +34,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       const handleChange = (e: MediaQueryListEvent) => {
         if (!localStorage.getItem('theme')) {
-          setTheme(e.matches ? 'dark' : 'light');
+          setTheme('light'); // On garde le thème clair même si le système change
+          localStorage.setItem('theme', 'light');
         }
       };
 

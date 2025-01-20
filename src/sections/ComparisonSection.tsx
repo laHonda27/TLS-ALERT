@@ -106,15 +106,14 @@ export function ComparisonSection() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white px-2">
             Pourquoi choisir notre service ?
           </h2>
-      
         </motion.div>
 
-        {/* CTA Section au-dessus des comparaisons */}
+        {/* CTA Section - visible uniquement en desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative mb-16"
+          className="relative mb-16 hidden lg:block"
         >
           <div className="relative bg-white/95 dark:bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 p-4 sm:p-8">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 dark:from-white/10 dark:to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -128,7 +127,6 @@ export function ComparisonSection() {
               <CTAButtons />
             </div>
           </div>
-          {/* Ligne décorative en bas */}
           <div className="absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform translate-y-8" />
         </motion.div>
 
@@ -213,6 +211,27 @@ export function ComparisonSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* CTA Section - visible uniquement sur mobile */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative mt-8 lg:hidden"
+        >
+          <div className="relative bg-white/95 dark:bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 p-4 sm:p-8">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 dark:from-white/10 dark:to-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative text-center w-full max-w-3xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Faites le choix d'un service rapide, transparent, et abordable.
+              </h2>
+              <p className="mt-4 text-base sm:text-xl text-gray-600 dark:text-white/90 mb-8">
+                Oubliez les complications avec les agences.
+              </p>
+              <CTAButtons />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </SectionContainer>
   );

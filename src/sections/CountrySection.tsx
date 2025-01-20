@@ -74,8 +74,10 @@ export const CountrySection: React.FC = () => {
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Actuellement disponible en Tunisie
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+            Actuellement disponible en Tunisie
+          </span>
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Nous sommes fiers de vous proposer un service d'alerte fiable et rapide en Tunisie,

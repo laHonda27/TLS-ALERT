@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '../sections/HeroSection';
+import { StorySection } from '../sections/StorySection';
 import { ProblemSection } from '../sections/ProblemSection';
 import { HowItWorksSection } from '../sections/HowItWorksSection';
 import { FeaturesSection } from '../sections/FeaturesSection';
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <StorySection />
       <ProblemSection />
       <HowItWorksSection />
       <FeaturesSection />

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Bell, Zap, Calendar } from 'lucide-react';
+import { Section } from '../components/Section';
+import { WaveTransition } from '../components/WaveTransition';
 
 interface Step {
   icon: React.ElementType;
@@ -21,15 +23,15 @@ export function HowItWorksSection() {
     },
     {
       icon: Calendar,
-      title: "Réservez votre rendez-vous",
-      description: "Cliquez sur le lien dans la notification pour accéder directement au créneau disponible."
+      title: "Réservez votre créneau",
+      description: "Cliquez sur le lien dans la notification pour réserver immédiatement votre rendez-vous."
     }
   ];
 
   return (
-    <section id="how-it-works" className="relative py-16 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <Section className="relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+      <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
               Comment ça marche ?
@@ -40,7 +42,7 @@ export function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-16"> 
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -61,6 +63,7 @@ export function HowItWorksSection() {
           })}
         </div>
       </div>
-    </section>
+      <WaveTransition />
+    </Section>
   );
 }
